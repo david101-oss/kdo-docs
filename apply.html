@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+<style>
+    *{
+        margin: 0px;
+    }
+    body{
+        overflow-y: hidden;
+        overflow-x: hidden;
+        overflow: hidden;
+    }
+    .ert{
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top: 0px;
+  padding-top: 200px;
+  height: 100%;
+  z-index: 700;
+  backdrop-filter: blur(10px);
+  background-color:rgba(51, 17, 68, 0.521);
+  /* display: none; */
+}
+    .first{
+        background-color: #314;
+        min-height: 100%;
+         width: 50%;
+         text-align: center;
+         padding-top: 150px;
+         padding-bottom: 200%;
+    }
+ 
+    .second{
+        background-color: white;
+        height: 100%;
+         width: 50%;
+         padding-bottom: 200%;
+         padding-top: 150px;
+         text-align: center;
+    }
+    
+  
+    .vc{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    img{
+        width: 200px;
+
+    }
+    .as{
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 20px;
+font-weight: 500;
+    }
+    .ass{
+        color: #314;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+    }
+</style>
+<body>
+    <div class="ert" id="ert">
+        <div class="spinner-border text" role="status">
+            <span class="sr-only"></span>
+                </div>
+      </div>
+    <div class="vc">
+        
+        <div class="first" onclick="sii()" id="fi">
+           <div>
+          <img src="./Screenshot_20221221-233303-removebg-preview.png" alt="">
+          <a href="signup.html">
+          <h4 class="as" id="as">As a Student</h4>
+        </a>
+        </div>
+        </div>
+       
+        <div class="second" onclick="siii()" id="se">
+            <div>
+            <img src="./Screenshot_20221221-233414-removebg-preview (1).png" alt="">
+           <a href=""><h4 class="ass" id="ass">As an Admin</h4></a> 
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+function sii(){
+   document.getElementById('se').style.backgroundColor="#314"
+   document.getElementById('se').style.transition="2s"
+   document.getElementById('fi').style.transition="2s"
+   document.getElementById('as').style.color="#314"
+   document.getElementById('ass').style.color="white"
+   document.getElementById('fi').style.backgroundColor="white"
+}
+function siii(){
+   document.getElementById('se').style.backgroundColor="#314"
+   document.getElementById('fi').style.transition="2s"
+   document.getElementById('se').style.transition="2s"
+   document.getElementById('as').style.color="#314"
+   document.getElementById('ass').style.color="white"
+   document.getElementById('fi').style.backgroundColor="white"
+}
+setTimeout(() => {
+        document.getElementById('ert').style.display="none";
+        document.getElementById('ert').style.transitionDuration="2s";
+      
+        
+    }, 3000);
+</script>

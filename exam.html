@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+	font-size: 19px;
+	font-family: 'Avenir', sans-serif;
+	color: #212020;
+  font-weight: 300;
+  text-align: center;
+  background-color:  white;
+}
+h1{
+  font-weight: 300px;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  font-size: 20px;
+  background-color:#314;
+  color: #fff;
+
+;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 15px;
+}
+button{
+  font-family: 'Brandon Grotesque', sans-serif;
+	font-size: 15px;
+	background-color:#314;
+	color:white;
+	border: 0px;
+	border-radius: 20px;
+	padding: 20px;
+ cursor: -webkit-grabbing; cursor: grabbing;
+	margin-bottom: 20px;
+  margin-top: 60px;
+}
+button:hover{
+	background-color: white;
+  color: #314;
+  border: 1px solid #314;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.active-slide{
+  opacity: 2;
+  z-index: 3;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+#quiz{
+  display: none;
+}
+
+
+
+#next{
+  display: none;
+}
+</style>
+<body>
+  
+    <h1>SKILLUS Quiz Game</h1>
+    <h1 id="screen"></h1>
+    
+    <button onclick="start()" id="start">Start</button>
+<div class="quiz-container">
+  <div id="quiz"></div>
+ 
+</div>
+<button id="previous">Previous Question</button>
+<button id="next" >Next Question</button>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div> 
+
+
+
+</div>
+<a href="payment.html"><button id="pay" hidden>Payment</button></a>
+</body>
+</html>
+<script>
+    (function() {
+  const myQuestions = [
+    {
+      question: "How many fingers are on the foot of a man?",
+      answers: {
+        a: "one",
+        b: "Five",
+        c: "Three"
+       },
+      correctAnswer: "c" 
+    
+    },
+    {
+      question: "Whose face was said to have launched 1000 ships?",
+      answers: {
+        a: "Rowan Atkinson",
+        b: "Barbara Mori",
+        c: "Helen of Troy"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Water boils at 212 degrees on which temperature scale?",
+      answers: {
+        a: "Kelvin",
+        b: "Fahrenheit",
+        c: "Celsius",
+       
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What is the Italian word for pie?",
+      answers: {
+        a: "Pie",
+        b: "Lasagna",
+        c: "Pizza",
+       
+      },
+      correctAnswer: "c"
+    },
+     {
+      question: "What was Marilyn Monroe's natural hair colour?",
+      answers: {
+        a: "Ginger",
+        b: "Blue",
+        c: "Brown",
+       
+      },
+      correctAnswer: "a"
+    },
+     {
+      question: "Which two metals is pewter made from?",
+      answers: {
+        a: "Copper and Bronze",
+        b: "Tin and lead.",
+        c: "Zinc and gold",
+       
+      },
+      correctAnswer: "b"
+    },
+     {
+      question: "What takes place in Hong Kong's Happy Valley?",
+      answers: {
+        a: "Monkey racing",
+        b: "Dog racing.",
+        c: "Horse racing",
+       
+      },
+      correctAnswer: "c"
+    },
+     {
+      question: "Which country does the sport of pelato come from?",
+      answers: {
+        a: "Portugal",
+        b: "Spain",
+        c: "Italy",
+       
+      },
+      correctAnswer: "b"
+    },
+     {
+      question: "How many sides, in total, would three triangles and three rectangles have?",
+      answers: {
+        a: "21",
+        b: "19",
+        c: "12",
+       
+      },
+      correctAnswer: "a"
+    },
+     {
+      question: "Who invented the bikini?",
+      answers: {
+        a: "Gianni Versace",
+        b: "Louis Reard.",
+        c: "Dolce Gabbana",
+       
+      },
+      correctAnswer: "b"
+    },
+  ];
+
+  function buildQuiz() {
+    // we'll need a place to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // we'll want to store the list of answer choices
+      const answers = [];
+
+      // and for each available answer...
+      for (letter in currentQuestion.answers) {
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+             <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+           </label>`
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+        `<div class="slide">
+           <div class="question"> ${currentQuestion.question} </div>
+           <div class="answers"> ${answers.join("")} </div>
+         </div>`
+      );
+    });
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join("");
+  }
+
+  function showResults() {
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if (userAnswer === currentQuestion.correctAnswer) {
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+        // if answer is wrong or blank
+        // color the answers red
+        answerContainers[questionNumber].style.color = "red";
+      }
+    
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+
+ 
+  function showSlide(n) {
+    slides[currentSlide].classList.remove("active-slide");
+    slides[n].classList.add("active-slide");
+    currentSlide = n;
+    
+    if (currentSlide === 0) {
+      previousButton.style.display = "none";
+    } else {
+      previousButton.style.display = "inline-block";
+    }
+    
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none";
+      submitButton.style.display = "inline-block";
+    } else {
+      nextButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
+
+  // display quiz right away
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  showSlide(0);
+
+  // on submit, show results
+  submitButton.addEventListener("click", showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+
+function start(){
+        //get the mi  and sec from input
+
+        const min = document.getElementById('min')
+        const sec = document.getElementById('sec')
+        const screen = document.getElementById('screen')
+        //convert min and sec to number 
+        let minutes = Number(00)
+        let seconds = Number(50)
+
+        let interval = null;
+        interval = setInterval(()=>{
+          document.getElementById('quiz').style.display="block";
+          document.getElementById('start').style.display="none";
+            seconds--
+//reset seconds to 59 if it counts down to 0
+            if(seconds < 0){
+                seconds = 60;
+                minutes  --;
+              
+            }
+//stop countdown if time is 00:00
+screen.innerHTML = `${minutes}:${seconds}`;
+            if(seconds == 0 && minutes== 0){
+                clearInterval(interval)
+                clearInterval(interval)
+                clearInterval(interval)
+              document.getElementById('quiz').style.display="none";
+              document.getElementById('next').style.display="none";
+              document.getElementById('submit').style.display="none";
+              document.getElementById('previous').style.display="none";
+              document.getElementById('start').style.display="none";
+              screen.innerHTML = "stop here"
+              document.getElementById('pay').hidden = false;
+            }
+
+           
+        }, 1000)}
+</script>

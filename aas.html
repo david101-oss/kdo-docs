@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
+
+</head>
+<style>
+    body{
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-position: center;
+             
+        margin: 0px;
+        padding: 0px;
+          overflow-y: hidden;
+          overflow-x: hidden;
+    }
+    .vc{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+    }
+    nav{
+      
+   margin-top: -60px;
+   display: flex;
+   position: fixed;
+   top: 0px;
+   width: 100%;
+   padding: 5px 0px 0px 10px;
+   display: flex;
+   justify-content: space-between;
+    }
+    .fd{
+      color: white;
+     margin-left: -100px;
+     margin-top: 73px;
+     font-size: 12px;
+     font-weight: 400;
+     cursor: pointer;
+    
+    }
+    .im{
+        margin-top: 50px;
+    }
+    .img{
+        width: 100px;
+        height: 60px;
+        color: red;
+    }
+   
+    body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+}
+
+.btn {
+  width: 35%;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 3px;
+  font-size: 1.0em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.btn:hover {
+  background-color: #c00b2f;
+}
+
+.card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.icon-cog {
+  color: white;
+}
+
+.fa-cog {
+  color: white;
+}
+
+.btnm {
+  width: 35%;
+  padding: 5px 5px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.btnm:hover {
+  background-color: rgba(22, 160, 133, .7);
+}
+
+/* Here Is The CSS For The Background*/
+
+/* An Overlay To Dim The Image And Make Text Readable*/
+#color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #34495e, #2c3e50);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Setup For An Image That Fits On Most Screens And Resizes*/
+.with-bg-size {
+  background-image: url("https://images.unsplash.com/photo-1454897834822-1ece264a5d89?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3a5615c0bc77123ece2a2663e2640341");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  
+  
+  -webkit-animation: back 5s infinite; /* Safari 4+ */
+  -moz-animation:    back 5s infinite; /* Fx 5+ */
+  -o-animation:      back 5s infinite; /* Opera 12+ */
+  animation:         back 5s infinite; /* IE 10+, Fx 29+ */
+  
+  
+}
+/* The Keyframes*/
+@keyframes back {
+  25% {
+    background-image: url("https://images.unsplash.com/photo-1463003416389-296a1ad37ca0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1bed2a6743851633b655ae774c15ac07");
+  }
+  50% {
+    background-image: url("https://images.unsplash.com/photo-1461080639469-66d73688fb21?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=dfec7f536c4133dc029608d2488e13e9");
+  }
+  
+  75%{
+    background-image: url("https://images.unsplash.com/photo-1461770354136-8f58567b617a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f0c8c34fe56f9669d1c6d129f597f895");
+  }
+  
+/* Animation Does Not End At 100% Because It Makes The Images Transition In/Out Better For Some Reason*/
+}
+</style>
+<body>
+
+    <div class="with-bg-size" style="position:fixed; top:0px; left:0px; z-index:-2; width:100%; margin:auto;">
+        <div id="color-overlay"></div>
+      </div>
+      
+      <div class="card">
+        <h1 class="vc">WELCOME TO SKILLUS</h1>
+      
+          
+          
+        
+        <br />
+        <a class="btn">GET STARTED</a>
+        <br />
+        <br />
+       
+        
+      
+      </div>
+        <nav >
+            <div class="im">
+                <img src="./Screenshot_20221220-114531-removebg-preview.png" alt="" class="img">
+            </div>
+
+          
+            <div>
+              <h3 class="fd">LOGIN</h3>
+            </div>
+            
+        </nav>
+   
+    <div class="f">
+        
+    </div>
+</body>
+</html>
+<script>
+
+
+  
+  var typing=new Typed(".we", {
+       strings: ["Currently on a mission to make tech accessible for everyone❤."],
+       typeSpeed: 100,
+       backSpeed: 40,
+       loop: true,
+   });
+</script>

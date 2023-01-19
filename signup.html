@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+<style>
+    .text{
+       color: #314;
+       
+    }
+    body{
+        background-color: rgb(228, 227, 227);
+    }
+    .ert{
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top: 0px;
+  padding-top: 200px;
+  height: 100%;
+  z-index: 700;
+  backdrop-filter: blur(10px);
+  background-color:#0c2b2b23;
+  /* display: none; */
+}
+    .bod{
+        background-color: white;
+        margin: auto;
+       border-left: 3px solid #314;
+       border-right: none;
+       border-top: none;
+       border-bottom: none;
+        height:auto;
+        padding-bottom: 20px;
+        text-align: center;
+        width: auto;
+        padding-top: 40px;
+    }
+    h2{
+        color:#0c2b2b;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    }
+    input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid#0c2b2b;
+        width: auto;
+        outline: none;
+    }
+    input:focus-within{
+        background-color:#f5c82625;
+        color:black;
+    }
+    .er{
+        text-align: left;
+        padding-left: 60px;
+    }
+    button{
+      color: white;
+      height: auto;
+      width: auto;
+      border: none;
+      background-color: #314;
+      padding: 10px 10px 10px 10px;
+      border-radius: 5px;
+    }
+    h5{
+        color:#0c2b2b;
+        width: 400px;
+        font-size: 15px;
+    }
+    .f{
+text-align: left;
+padding-left: 410px;
+    }
+    .ree{
+    color: #314;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  b{
+    color: rgba(51, 17, 68, 0.541);
+    margin-left: -8px;
+  }
+  .fg{
+   text-align: center;
+   padding-top: 30px;
+  }
+ 
+</style>
+<body>
+    <div class="ert" id="ert">
+        <div class="spinner-border text" role="status">
+            <span class="sr-only"></span>
+                </div>
+      </div>
+    <div class="fg">
+        <h2 class="ree">SKIL <b>LUS</b>  </h2>
+     </div>
+    <!-- <div class="spinner-border text" role="status">
+<span class="sr-only"></span>
+    </div> -->
+ <br> <br>
+    <div class="bod ">
+                    <h2>Sign Up</h2>
+                    <br> <br>
+                    <form name="form-login" action="index.html">
+                        <div>
+                            
+                           
+                            <input type="email" name="" placeholder="Email address" id="name" required>
+                        </div>
+                        <br> <br>
+<div>
+    <input type="name" name=""  required placeholder="Your Name">
+</div>
+<br> <br>
+                <div>  <input type="password" name="" required id="pw" placeholder="Password"></div> 
+               
+
+               
+             
+             
+               
+        
+                <br>  <br>
+                
+                <div style="justify-content: space-between; display:flex; flex-wrap: wrap;">
+        <div>
+            <h5>Forgot password</h5>
+        </div>
+        <div>
+            
+           <a href="login.html" style="text-decoration: none;"><h5>Login</h5></a> 
+        </div>
+                </div>
+ <br> <br>
+                <div class="er">
+                  <button onclick="store()">Sign Up</button>
+                </div> 
+            </form> 
+                  
+    </div>
+    
+</body>
+</html>
+<script>
+
+setTimeout(() => {
+        document.getElementById('ert').style.display="none";
+        document.getElementById('ert').style.transitionDuration="2s";
+      
+        
+    }, 3000);
+    let arr = []
+    function mac(){
+        
+    const a=document.getElementById('na')
+    const b=document.getElementById('naa')
+    const c=document.getElementById('naaa')
+  
+    let data = {
+            Password:a.value,
+      Name:b.value,
+      Email: c.value
+       
+
+    }
+    arr.push(data);
+    localStorage.setItem("USER", JSON.stringify(arr))
+    console.log(arr);
+
+} 
+
+    
+function store(){
+
+var name = document.getElementById('name');
+var pw = document.getElementById('pw');
+var lowerCaseLetters = /[a-z]/g;
+var upperCaseLetters = /[A-Z]/g;
+var numbers = /[0-9]/g;
+
+if(name.value.length == 0){
+    alert('Please fill in email');
+
+}else if(pw.value.length == 0){
+    alert('Please fill in password');
+
+}else if(name.value.length == 0 && pw.value.length == 0){
+    alert('Please fill in email and password');
+
+}else if(pw.value.length > 8){
+    alert('Max of 8');
+
+}else if(!pw.value.match(numbers)){
+    alert('please add 1 number');
+
+}else if(!pw.value.match(upperCaseLetters)){
+    alert('please add 1 uppercase letter');
+
+}else if(!pw.value.match(lowerCaseLetters)){
+    alert('please add 1 lowercase letter');
+
+}else{
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('pw', pw.value);
+    alert('Your account has been created');
+}
+}
+
+//checking
+function check(){
+var storedName = localStorage.getItem('name');
+var storedPw = localStorage.getItem('pw');
+
+var userName = document.getElementById('userName');
+var userPw = document.getElementById('userPw');
+var userRemember = document.getElementById("rememberMe");
+
+if(userName.value == storedName && userPw.value == storedPw){
+    alert('You are logged in.');
+}else{
+    alert('Error on login');
+}
+}
+arr.push(data);
+localStorage.setItem("USER", JSON.stringify(arr))
+console.log(arr);
+
+
+</script>

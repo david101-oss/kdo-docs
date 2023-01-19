@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<style>
+    nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.493);
+   
+    position: fixed;
+    flex-wrap: wrap;
+  height: auto;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.ree{
+    color: #314;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    color:white;
+    font-weight: 600;
+  }
+  button{
+    width: 150px;
+    height: 60px;
+    margin-top: 4px;
+    border: 3px solid white;
+    background-color: rgba(51, 17, 68, 0.295);
+    backdrop-filter: blur(10px);
+  }  h2{
+    color: #314;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 38px;
+  }
+  b{
+    color: rgba(98, 4, 145, 0.705);
+    margin-left: -8px;
+  }
+  *{
+
+    margin:0px;
+    /* padding: 0px; */
+  }
+  .ds{
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    border: 3px solid #314;
+    margin-top: 10px;
+    background-color: rgba(51, 17, 68, 0.397);
+  }
+  .dsd{
+    display: flex;
+justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: left;
+   
+  
+  }
+  img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+  }
+  .manu{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+   display: none;
+    z-index: 700;
+    border-radius: 10px;
+    margin-top: -304px;
+  transition: 2s;
+    background-color:rgba(51, 17, 68, 0.384);
+  }
+  .ds:hover .manu{
+    display: block;
+    transition: 2s;
+    transition-duration: 2s;
+    transition-duration: 3s;
+    transition-delay: 2s;
+  }
+</style>
+<body>
+    <nav>
+        <div>
+            <h2 class="ree">SKIL <b> LUS</b> </h2>
+         </div>
+
+         <div style="display: flex; flex-wrap: wrap; justify-content:space-evenly; width:200px; padding-left: 10px;">
+            <div>
+               <h2>Exam</h2>
+            </div>
+            <div>
+                <h2>Profile</h2>
+             </div>
+         </div>
+      </nav>
+<br> <br> <br> <br>
+      <div class="dsd">
+        <div class="ds"><img src="./1.jpg" alt="">
+        <div class="
+        manu">
+        <br><br> <br> <br> <br> <br>
+            <h1 id="na" >Manufacturing</h1>
+         <a href="start.html">   <button onclick="mac()">    Apply</button></a></a>
+        </div></div>
+        <div class="ds"> <img src="./2 (2).jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                <h1 id="na">Painting</h1>
+             <a href="start.html">   <button onclick="ma()">    Apply</button></a>
+            </div></div>
+        <div class="ds"> <img src="./3 (2).jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                <h1 id="na">Carpentry & Woodwork</h1>
+              <a href="start.html">  <button  onclick="maa()">    Apply</button></a>
+            </div></div>
+        <div class="ds"> <img src="./4.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                <h1 id="na">Makeup/makeover</h1>
+              <a href="start.html">  <button  onclick="a()">    Apply</button></a>
+            </div></div>
+        <div class="ds"> <img src="./5.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                 <h1 id="na">Catering</h1>
+              <a href="start.html">  <button  onclick="b()">    Apply</button></a>
+            </div></div>
+        <div class="ds"> <img src="./6.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                 <h1 id="na">Plumbing</h1>
+              <a href="start.html">  <button  onclick="c()">    Apply</button></a>
+            </div></div>
+        <div class="ds"><img src="./7.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                 <h1 id="na">Hairdreeser & Barbing saloon</h1>
+              <a href="start.html">  <button  onclick="d()">    Apply</button></a>
+            </div></div>
+        <div class="ds"><img src="./9.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                 <h1 id="na">Welding</h1>
+             <a href="start.html">   <button onclick="e()">    Apply</button></a>
+            </div></div>
+        <div class="ds"><img src="./10.jpg" alt="">
+            <div class="
+            manu">  <br> <br> <br> <br> <br> <br>
+                <h1>Automile Service</h1>
+             <a href="start.html">   <button onclick="f()">    Apply</button></a>
+            </div></div>
+      </div>
+</body>
+</html>
+<script>
+   let arr = []
+
+  function mac(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="manufacturing tuition fee:40,000 naira",
+      
+     
+
+  }
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function ma(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="painting  tuition fee:40,000 naira",
+      
+     
+
+  }
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function maa(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Carpentry / Woodwork  tuition fee:50,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function a(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Makeup / Makeover  tuition fee:45,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function b(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Catering  tuition fee:35,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function c(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Plumbing  tuition fee:50,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function d(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Hairdresser / Barbing  tuition fee:50,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function e(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Welding  tuition fee:80,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+function f(){
+  const a=document.getElementById('na')
+ 
+
+  let data = {
+      Name:a.innerHTML="Automobile / service  tuition fee:45,000 naira",
+      
+     
+
+  }
+  
+  arr.push(data);
+ 
+
+
+ 
+  localStorage.setItem("ola", JSON.stringify(arr))
+  console.log(arr);
+
+} 
+</script>

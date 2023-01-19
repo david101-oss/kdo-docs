@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getstarted</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        
+      
+    }
+    .ert{
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top: 0px;
+  padding-top: 200px;
+  height: 100%;
+  z-index: 700;
+  backdrop-filter: blur(10px);
+  background-color:rgba(51, 17, 68, 0.521);
+  /* display: none; */
+}
+    .ur{
+        
+        margin: auto;
+        text-align: center;
+     padding-top: 150px;
+     background-color: white;
+    
+    }
+    input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid #314;
+        width: auto;
+        outline: none;
+        font-size: 18px;
+    }
+    .di{
+        margin-top: 200px;
+    }
+    .sd{
+        color: white;
+      height: auto;
+      width: auto;
+      border: none;
+      background-color: #314;
+      padding: 10px 10px 10px 10px;
+      border-radius: 5px;
+    }
+    .sd:hover{
+        background-color: white;
+        color: #314;
+        border: 1px solid #314;
+        transition: 2s;
+    }
+    .ree{
+    color: #314;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  b{
+    color: rgba(98, 4, 145, 0.705);
+    margin-left: -8px;
+  }
+  /* img{
+    display: none;
+  } */
+  h1{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: #314;
+  }
+</style>
+<body>
+    <div class="ert" id="ert">
+        <div class="spinner-border text" role="status">
+            <span class="sr-only"></span>
+                </div>
+      </div>
+    <form action="profile.html"  onsubmit="" name="text"  method="get">
+    <div class="ur">
+        <div class="fg">
+            <h2 class="ree">SKIL <b> LUS</b> </h2>
+         </div>
+
+         <br> <br>
+        
+         <div>
+       <input type="text" placeholder="Your Nickname" id="na" required>
+
+       </div>
+       <br> <br> <br>
+      
+<div class="di">
+       <button onclick="mac()" class="sd">Get started</button>
+    </div>
+   
+
+    </div>
+</form>
+</body>
+</html>
+<script>
+    let arr = []
+// let USER = JSON.parse(localStorage.getItem("USER"))
+// if (USER != null){
+//     arr = USER
+// }
+function mac(){
+    const a=document.getElementById('na')
+    const b=document.getElementById('file')
+  
+    let data = {
+        Name:a.value,
+        
+       
+
+    }
+    arr.push(data);
+   
+  
+ 
+   
+    localStorage.setItem("Nick", JSON.stringify(arr))
+    console.log(arr);
+
+} 
+
+
+function preview(){
+    const file = document.getElementById('file');
+    const freader = new FileReader();
+    freader.readAsDataURL(file.files[0])
+    console.log(file.files)
+
+    freader.onload = () =>{
+        document.getElementById('image').src = freader.result
+    }
+
+    freader.onerror = (err) => {
+        console.log(err)
+    }
+}
+setTimeout(() => {
+        document.getElementById('ert').style.display="none";
+        document.getElementById('ert').style.transitionDuration="2s";
+      
+        
+    }, 3000);
+</script>

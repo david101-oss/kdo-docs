@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../Desktop/bootstrap-5.2.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+   <br>
+   <input type="text" onkeyup="Search()" name="" id="">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>price</th>
+            <th>available</th>
+          </tr>
+        </thead>
+          <tbody id="show">
+                
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+   
+    let show = document.getElementById('show')
+    let USER = JSON.parse(localStorage.getItem('USER'))
+    let userDetails = []
+    // show.innerHTML = userDetails.Name
+    if (USER != null){
+        userDetails = USER
+    }
+    // console.log(userDetails);
+
+//  userDetails.forEach(element => {
+//     console.log(element);
+//  });
+    // let data={
+    //     Name:a.value,
+    //     DOB:b.value,
+    //     Account:c.value,
+    //     Balance:d.value,
+    //     BVN:e.value
+
+    // }
+   for(let i = 0; i<userDetails.length;i++){
+     let item=userDetails[i]
+   
+     document.getElementById('show').innerHTML += 
+     `
+     <tr>
+       <td>${item.Name}</td>
+       <td>${item.price}</td>
+       <td>${item.available}</td>
+     </tr>`
+
+     
+   }
+   function Search(){
+    const word = document.getElementById('show');
+    userDetails = USER.filter((item) => {
+        return String(item.name).indexOf(word.value) >= 0;
+    })
+    displaySelectedUsers()
+   
+}
+function displaySelectedUsers(){
+    document.getElementById("show").innerHTML = ""
+    userDetails.forEach((USER, index) => {
+        document.getElementById("show").innerHTML += 
+        `
+     <tr>
+       <td>${item.Name}</td>
+       <td>${item.price}</td>
+       <td>${item.available}</td>
+     </tr>`
+
+    })
+}
+function displayUsers(){
+    document.getElementById("show").innerHTML = ""
+    userDetails.forEach((USER, index) => {
+        document.getElementById("show").innerHTML += 
+        `
+     <tr>
+       <td>${item.Name}</td>
+       <td>${item.price}</td>
+       <td>${item.available}</td>
+     </tr>`
+
+        
+    })
+}
+</script>

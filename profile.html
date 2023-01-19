@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+</head>
+<body>
+    <div class="ert" id="ert">
+        <div class="spinner-border text" role="status">
+            <span class="sr-only"></span>
+                </div>
+      </div>
+      <nav>
+        <div>
+            <h2 class="ree">SKIL <b> LUS</b> </h2>
+         </div>
+
+         <div class="sqw">
+           
+            <div>
+              <a href="course.html"> <h3>Registration</h3></a> 
+            </div>
+          
+         </div>
+      </nav>
+       <br> <br> <br> <br>
+      <div class="wew">
+        <input type="file" name="" id="file"  class="ads" onchange="preview()">
+       <label for="file"><i class="icofont-camera"></i></label>
+        <img src="" id="image" alt="">
+        <div>
+        <h1 id="show">
+       
+        </h1>
+    </div>
+    </div>
+    <br> <br> <br>
+    
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+ <br>
+    <div class="wrap">
+      <div class="sticker"></div>
+      <div class="msg"><h5 style="font-size: 20px;">certification</h5></div>
+    </div>
+</body>
+</html>
+<script>
+     
+       let show = document.getElementById('screen')
+      let USER = JSON.parse(localStorage.getItem('Nick'))
+      let userDetails = []
+    //    show.innerHTML = userDetails.Name
+      if (USER != null){
+          userDetails = USER
+      }
+
+      for(let i = 0; i<userDetails.length;i++){
+       let item=userDetails[i]
+   
+       document.getElementById('show').innerHTML = 
+       `
+    
+         <h1>${item.Name}</h1>
+    
+      `
+
+     
+    }
+function preview(){
+    const file = document.getElementById('file');
+    const freader = new FileReader();
+    freader.readAsDataURL(file.files[0])
+    console.log(file.files)
+
+    freader.onload = () =>{
+        document.getElementById('image').src = freader.result
+    }
+
+    freader.onerror = (err) => {
+        console.log(err)
+    }
+}
+let arr = []
+// let USER = JSON.parse(localStorage.getItem("USER"))
+// if (USER != null){
+//     arr = USER
+// }
+function mac(){
+    const a=document.getElementById('na')
+    const b=document.getElementById('file')
+  
+    let data = {
+        image:b.value,
+        
+       
+
+    }
+    arr.push(data);
+   
+  
+ 
+   
+    localStorage.setItem("Nick", JSON.stringify(arr))
+    console.log(arr);
+
+} 
+setTimeout(() => {
+        document.getElementById('ert').style.display="none";
+        document.getElementById('ert').style.transitionDuration="2s";
+      
+        
+    }, 3000);
+</script>

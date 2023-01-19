@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form_wrapper{
+        margin: auto;
+       border-left: 3px solid #314;
+        text-align: left;
+        width: 300px;
+        padding-left: 20px;
+        background-color: white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    body{
+      padding-top: 10px;
+      background-color: rgb(228, 227, 227);
+    }
+    input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid #314;
+        width: auto;
+        outline: none;
+    }
+    input:focus-within{
+        background-color: rgba(56, 21, 73, 0.205);
+        color:black;
+    }
+    .col_half{
+        margin-top: 30px;
+    }
+    .ed{
+        color: #314;
+        font-size: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 30px;
+    }
+    select{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        font-size: 16px;
+        
+        background-color: rgba(51, 17, 68, 0.829);
+    }
+    .dsd{
+font-family: sans-serif;
+color: #314;
+font-size: 20px;
+    }
+    .ree{
+    color: #314;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  b{
+    color: rgba(98, 4, 145, 0.705);
+    margin-left: -8px;
+  }
+  .fg{
+   text-align: center;
+   padding-top: 40px;
+  }
+</style>
+<body>
+  <div class="fg" id="fg">
+  <h2 class="ree">SKIL <b> LUS</b> </h2>
+  <br> <br>
+  </div>
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2 class="dsd"> Registration Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form>
+                
+                <div class="row clearfix">
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text" name="name" placeholder="First Name" id="na">
+                    </div>
+                  </div>
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text" name="name" placeholder="Last Name" required id="naa">
+                    </div>
+                  </div>
+                </div>
+                <br> <br>
+                      <!-- <div class="input_field radio_option">
+                    <input type="radio"  name="radiogroup1" id="naaa">
+                    <label for="rd1" class="ed">Male</label>
+                    <input type="radio" name="radiogroup1" id="naaaa">
+                    <label for="rd2" class="ed">Female</label>
+                    </div> -->
+                    <br> <br>
+                    <div class="input_field select_option">
+                      <select id="naaaaa">
+                        <option>Select a state</option>
+                        <option>OYO</option>
+                        <option>LAGOS</option>
+                        <option>OGUN</option>
+                        <option>AKURE</option>
+                        <option>EKITI</option>
+                      </select>
+                      <div class="select_arrow"></div>
+                    </div>
+                    <br> <br>
+                    <div class="input_field select_option">
+                        <select  id="naaaaaa">
+                          <option>Select a skills</option>
+                         
+                          <option>Manufacturing</option>
+                          <option>Painting</option>
+                          <option>Carpentry & Woodwork</option>
+                          <option>Makeup/ Makeover</option>
+                          <option>Catering</option>
+                          <option>Plumbing</option>
+                          <option>Hairdresser & Barbing sallon</option>
+                          <option>Welding</option>
+                          <option>Automile</option>
+
+
+
+
+
+
+
+                        </select>
+                        <div class="select_arrow"></div>
+                      </div>
+                <br> <br>
+              <button onclick="mac()">register</button>
+              <a href="payment.html">payment</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+</body>
+</html>
+<script>
+  function retrieveData(){
+    let item= localStorage.setItem('')
+    let convertBackToArray=JSON.parse(item)
+    console.log(convertBackToArray)
+}
+let arr = []
+// let USER = JSON.parse(localStorage.getItem("USER"))
+// if (USER != null){
+//     arr = USER
+// }
+function mac(){
+    const a=document.getElementById('na')
+    const b=document.getElementById('naa')
+   
+    const e=document.getElementById('naaaaa')
+    const f=document.getElementById('naaaaaa')
+    let data = {
+        firstname:a.value,
+      lastname:b.value,
+     
+       state:e.value,
+       course:f.value,
+
+    }
+    arr.push(data);
+   
+  
+    
+    localStorage.setItem("skiller", JSON.stringify(arr))
+    console.log(arr);
+
+} 
+// function del(){
+    
+//     for(let i = 0; i<arr.length;i++){
+//      let item=arr[i]
+//      document.getElementById('content').innerHTML+=`
+//      <tr>
+//        <td>${item.firstname}</td>
+//        <td>${item.lastname}</td>
+//        <td>${item.gender}</td>
+//        <td>${item.state}</td>
+//        <td>${item.course}</td>
+    
+  
+//      </tr>`
+
+     
+    // }
+
+
+// }
+// function on(){
+    
+//     localStorage.setItem("USER", JSON.stringify(...arr))
+//     console.log(arr);
+
+// }
+</script>
